@@ -13,7 +13,6 @@
 	<link rel="stylesheet" href="css/icomoon.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link href='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css' rel='stylesheet' />
-	<script src='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js'></script>
 	<style type="text/css">
 		div {
 			/* outline: 1px solid red; */
@@ -459,19 +458,7 @@
 							<div class="col-md-6 d-flex align-items-stretch">
 								
 								<div id='map' style='width: 555px; height: 500px; background-image: url(images/map-bg.png);'></div>	
-								<script>
-									mapboxgl.accessToken = 'pk.eyJ1IjoicmVsbGJpdHMiLCJhIjoiY2thNWxzMml0MDFsZjNucThhNXhpejc4cyJ9.MQ6hz_ADs1zgb2uxnOCyug';
-									var map = new mapboxgl.Map({
-										container: 'map',
-										style: 'mapbox://styles/mapbox/streets-v11',
-										center: [-80.311181,25.895611],
-										zoom: 15
-									});
-
-									var marker = new mapboxgl.Marker()
-										.setLngLat([-80.311181,25.895611])
-										.addTo(map);
-								</script>
+								
 							</div>
 						</div>
 					</div>
@@ -552,6 +539,21 @@
 	<script src="js/jquery.magnific-popup.min.js"></script>
 	<script src="js/scrollax.min.js"></script>
 	<script src="js/main.js"></script>
+	<script src='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js'></script>
+	<script>
+
+		mapboxgl.accessToken = 'pk.eyJ1IjoicmVsbGJpdHMiLCJhIjoiY2thNWxzMml0MDFsZjNucThhNXhpejc4cyJ9.MQ6hz_ADs1zgb2uxnOCyug';
+		var map = new mapboxgl.Map({
+			container: 'map',
+			style: 'mapbox://styles/mapbox/streets-v11?optimize=true',
+			center: [-80.311181,25.895611],
+			zoom: 15
+		});
+
+		var marker = new mapboxgl.Marker()
+			.setLngLat([-80.311181,25.895611])
+			.addTo(map);
+	</script>
 
 
 </body>
