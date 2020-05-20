@@ -31,9 +31,6 @@
 	};
 	loader();
 
-	// Scrollax
-   	$.Scrollax();
-
 	$('nav .dropdown').hover(function(){
 		var $this = $(this);
 		// 	 timer;
