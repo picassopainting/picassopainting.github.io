@@ -2,54 +2,19 @@
 
 	"use strict";
 
+
 	$(window).stellar({
-    	responsive: true,
-    	parallaxBackgrounds: true,
-    	parallaxElements: true,
-    	horizontalScrolling: false,
-    	hideDistantElements: false,
-    	scrollProperty: 'scroll'
-	  });
-	  
-	//WebP Support
-	Modernizr.on('webp', function (result) {
-		if (result) { 
-			console.log("Has WebP Support");
-			$('.hero-wrap').css('background-image', 'url("images/bg_0.webp")');
-			$('#about-image').css('background-image', 'url("images/services_3.webp")');
+    responsive: true,
+    parallaxBackgrounds: true,
+    parallaxElements: true,
+    horizontalScrolling: false,
+    hideDistantElements: false,
+    scrollProperty: 'scroll'
+  });
 
-			var array = [ "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", 
-				"m", "n", "o", "p" ];
-			
-			$.each( array, function( i, val ) {
-				// console.log("val:" + val);
-				$('#gallery-'+val+'1').css('background-image', 'url("images/'+val+'1.webp")');
-				$('#gallery-'+val+'1 > a').attr('href','images/'+val+'1.webp');	
-			});
-
-			$('#map').css('background-image', 'url("images/map-bg.webp")');
-
-		} else {
-			console.log("No WebP Support");
-
-			$('.hero-wrap').css('background-image', 'url("images/bg_0.jpg")');
-			$('#about-image').css('background-image', 'url("images/services_3.jpg")');
-
-			var array = [ "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", 
-				"m", "n", "o", "p" ];
-			
-			$.each( array, function( i, val ) {
-				// console.log("val:" + val);
-				$('#gallery-'+val+'1').css('background-image', 'url("images/'+val+'1.jpg")');
-				$('#gallery-'+val+'1 > a').attr('href','images/'+val+'1.jpg');	
-			});
-
-			$('#map').css('background-image', 'url("images/map-bg.png")');
-			
-		}
-	});
 
 	var fullHeight = function() {
+
 		$('.js-fullheight').css('height', $(window).height());
 		$(window).resize(function(){
 			$('.js-fullheight').css('height', $(window).height());
@@ -69,28 +34,64 @@
 	loader();
 
 	// Scrollax
-   	$.Scrollax();
+   $.Scrollax();
+
+
+	$('nav .dropdown').hover(function(){
+		var $this = $(this);
+		// 	 timer;
+		// clearTimeout(timer);
+		$this.addClass('show');
+		$this.find('> a').attr('aria-expanded', true);
+		// $this.find('.dropdown-menu').addClass('animated-fast fadeInUp show');
+		$this.find('.dropdown-menu').addClass('show');
+	}, function(){
+		var $this = $(this);
+			// timer;
+		// timer = setTimeout(function(){
+			$this.removeClass('show');
+			$this.find('> a').attr('aria-expanded', false);
+			// $this.find('.dropdown-menu').removeClass('animated-fast fadeInUp show');
+			$this.find('.dropdown-menu').removeClass('show');
+		// }, 100);
+	});
+
+
+	$('#dropdown04').on('show.bs.dropdown', function () {
+	  console.log('show');
+	});
 
 	// magnific popup
 	$('.image-popup').magnificPopup({
-    	type: 'image',
-   		closeOnContentClick: true,
-    	closeBtnInside: false,
-    	fixedContentPos: true,
-    	mainClass: 'mfp-no-margins mfp-with-zoom', // class to remove default margin from left and right side
-     	gallery: {
-      		enabled: true,
-      		navigateByImgClick: true,
-      		preload: [0,1] // Will preload 0 - before current, and 1 after the current image
-    	},
-    	image: {
-      		verticalFit: true
-		},
-		zoom: {
-      		enabled: true,
-      		duration: 300 // don't foget to change the duration also in CSS
-    	}
-  	});
+    type: 'image',
+    closeOnContentClick: true,
+    closeBtnInside: false,
+    fixedContentPos: true,
+    mainClass: 'mfp-no-margins mfp-with-zoom', // class to remove default margin from left and right side
+     gallery: {
+      enabled: true,
+      navigateByImgClick: true,
+      preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+    },
+    image: {
+      verticalFit: true
+    },
+    zoom: {
+      enabled: true,
+      duration: 300 // don't foget to change the duration also in CSS
+    }
+  });
+
+  $('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
+    disableOn: 700,
+    type: 'iframe',
+    mainClass: 'mfp-fade',
+    removalDelay: 160,
+    preloader: false,
+
+    fixedContentPos: false
+  });
+
 
 
 	var contentWayPoint = function() {
@@ -143,6 +144,8 @@
 		});
 		return false;
 	});
+
+
 
 })(jQuery);
 
