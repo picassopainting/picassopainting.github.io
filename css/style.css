@@ -8208,6 +8208,7 @@ h1, h2, h3, h4, h5,
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
+  background-color: #517690;
   position: relative; }
   @media (max-width: 1199.98px) {
     .hero-wrap {
