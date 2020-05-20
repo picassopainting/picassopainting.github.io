@@ -21,22 +21,27 @@
 		<div class="row align-items-center">
 			<div class="custom-header col-md-6 d-flex justify-content-start" style="padding-top: 15px; padding-bottom: 15px;">
 				<!-- <a class="navbar-brand">Picasso<span>Painting</span></a> -->
-				<img src="images/logo.png" style="width: 150px;" alt="Picasso Painting">
+				<img src="images/logo.png" style="width: 150px; height: 87px;" alt="Picasso Painting">
 			</div>
 
 			<div class="custom-header col-md-6 d-flex justify-content-end" style="padding-top: 30px; padding-bottom: 10px;">
 				<div class="d-flex">
+					<div><label for="phonenumber"><i class="sr-only">Phone</i></label></div>
 					<div>
 						<form action="https://wa.me/17862875529" class="searchform order-lg-last">
 							<div class="form-group d-flex">
-								<input type="text" class="form-control pl-3 pr-1" style="font-size: 19px; font-weight: 400;" placeholder="(786) 287-5529" disabled>
-								<button type="submit" placeholder="" class="form-control search" style="background: #F2F2F2 !important; cursor: pointer;" ><span class="fab fa-whatsapp" style="font-size: 32px; color: #29B200;"></span></button>
+								<input type="text" name="phonenumber" class="form-control pl-3 pr-1" style="font-size: 19px; font-weight: 400;" placeholder="(786) 287-5529" disabled>
+								<button type="submit" placeholder="" class="form-control search" aria-label="Whatsapp" style="background: #F2F2F2 !important; cursor: pointer;" >
+									<span class="fab fa-whatsapp" style="font-size: 32px; color: #29B200;"></span>
+								</button>
 							</div>
 						</form>
 					</div>
 					<div class="social-media pl-2">
 						<p>
-							<a href="https://www.facebook.com/Picasso-Painting-100652681667382/" class="d-flex align-items-center justify-content-center" style="background: #F2F2F2 !important;"><span class="fab fa-facebook" style="font-size: 32px; color: #0093E0;"><i class="sr-only">Facebook</i></span></a>
+							<a href="https://www.facebook.com/Picasso-Painting-100652681667382/" class="d-flex align-items-center justify-content-center" style="background: #F2F2F2 !important;">
+								<span class="fab fa-facebook" style="font-size: 32px; color: #0093E0;"><i class="sr-only">Facebook</i></span>
+							</a>
 						</p>
 					</div>
 				</div>
@@ -423,7 +428,7 @@
 								<div class="row no-gutters">
 								<div class="dbox w-100 text-center">
 									<div class="icon d-flex align-items-center justify-content-center" style="background: #F2F2F2; cursor: pointer;">
-										<a href="https://wa.me/17862875529"><span class="fab fa-whatsapp" style="font-size: 35px; color: #0093E0;"></span></a>
+										<a href="https://wa.me/17862875529" aria-label="Whatsapp"><span class="fab fa-whatsapp" style="font-size: 35px; color: #0093E0;"></span></a>
 									</div>
 									<div class="text">
 										<p><span>Phone:</span> <a href="tel:+17862875529">(786) 287-5529</a></p>
@@ -432,7 +437,7 @@
 
 								<div class="dbox w-100 text-center">
 									<div class="icon d-flex align-items-center justify-content-center" style="background: #F2F2F2; cursor: pointer;">
-										<a href="mailto:info@yoursite.com"><span class="fa fa-paper-plane" style="font-size: 25px; color: #0093E0;"></span></a>
+										<a href="mailto:info@yoursite.com" aria-label="Email"><span class="fa fa-paper-plane" style="font-size: 25px; color: #0093E0;"></span></a>
 									</div>
 									<div class="text">
 										<p><span>Email:</span> <a href="mailto:info@yoursite.com">info@yoursite.com</a></p>
@@ -539,7 +544,9 @@
 			style: 'mapbox://styles/mapbox/streets-v11?optimize=true',
 			center: [-80.311181,25.895611],
 			zoom: 15,
-			attributionControl: false
+			attributionControl: false,
+			minZoom: 13,
+  			maxZoom: 15
 		});
 
 		var marker = new mapboxgl.Marker()
