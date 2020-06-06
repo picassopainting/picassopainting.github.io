@@ -14,7 +14,6 @@
 	<link rel="stylesheet" type="text/css" href="css/lightgallery.min.css">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/custom.css">
-	<link rel="stylesheet" type="text/css" href="https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css">
 	<!-- <style type="text/css"> div { outline: 1px solid red; } </style> -->
 </head>
 <body>
@@ -450,7 +449,11 @@
 				</div>
 
 				<div class="col-md-6 d-flex">
-					<div id="map"  style="width: 555px; height: 555px; background-image: url(images/map-bg.png);"></div>
+					<div class="gallery img d-flex align-self-stretch" style="width: 555px; height: 462px; background-image:url(images/map-bg.png);">
+						<a href="https://www.google.com/maps/place/1357+W+80th+St,+Hialeah,+FL+33014,+USA/@25.8953749,-80.3133853,17z/data=!3m1!4b1!4m5!3m4!1s0x88d9bad03dc21dd5:0x23c5e3230ef24512!8m2!3d25.8953701!4d-80.3111913" class="icon image-popup d-flex justify-content-center align-items-center">
+							<span class="fas fa-external-link-alt" style="font-size: 20px;"></span>
+						</a>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -506,7 +509,7 @@
 			</div>
 			<div class="row">
 				<div class="col-md-12 text-center">
-					<p>Copyright &copy; <span id="year"></span> Picasso Painting. All rights reserved</p>
+					<p>Picasso Painting &copy; <span id="year"></span></p>
 				</div>
 			</div>
 		</div>
@@ -520,23 +523,6 @@
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/lightgallery.min.js"></script>
 	<script src="js/main.js"></script>
-	<script src='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js'></script>
-	<script>
-		mapboxgl.accessToken = 'pk.eyJ1IjoicmVsbGJpdHMiLCJhIjoiY2thNWxzMml0MDFsZjNucThhNXhpejc4cyJ9.MQ6hz_ADs1zgb2uxnOCyug';
-		var map = new mapboxgl.Map({
-			container: 'map',
-			style: 'mapbox://styles/mapbox/streets-v11?optimize=true',
-			center: [-80.311181,25.895611],
-			zoom: 15,
-			attributionControl: false,
-			minZoom: 13,
-  			maxZoom: 15
-		});
-
-		var marker = new mapboxgl.Marker()
-			.setLngLat([-80.311181,25.895611])
-			.addTo(map);
-	</script>
 
 </body>
 </html>
